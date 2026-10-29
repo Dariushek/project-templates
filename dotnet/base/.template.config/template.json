@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "dariuszek",
+  "classifications": ["Config"],
+  "identity": "RS.Templates.Base",
+  "name": "RS base config",
+  "description": "Shared .editorconfig, .gitignore, Directory.Build.props, Directory.Packages.props and global.json.",
+  "shortName": "rs-base",
+  "tags": {
+    "language": "C#",
+    "type": "item"
+  }
+}
