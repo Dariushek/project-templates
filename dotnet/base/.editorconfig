@@ -33,6 +33,12 @@ csharp_style_prefer_utf8_string_literals = true:warning
 csharp_style_var_elsewhere = true:warning
 csharp_style_var_for_built_in_types = true:warning
 csharp_style_var_when_type_is_apparent = true:warning
+dotnet_style_prefer_collection_expression = when_types_loosely_match:warning
+# A switch expression over an enum is complete when every named value has an arm.
+# CS8509 still fails the build when one is missing, so no discard arm is needed.
+dotnet_diagnostic.CS8524.severity = none
+# Async suffix: test names state behavior and carry none.
+dotnet_diagnostic.VSTHRD200.severity = none
 dotnet_diagnostic.CS1591.severity = none
 dotnet_diagnostic.CA1062.severity = none
 dotnet_diagnostic.CA1716.severity = none
@@ -206,3 +212,7 @@ resharper_remove_redundant_braces_highlighting = hint
 resharper_suggest_var_or_type_built_in_types_highlighting = warning
 resharper_suggest_var_or_type_elsewhere_highlighting = warning
 resharper_suggest_var_or_type_simple_types_highlighting = warning
+
+[**Tests/**.cs]
+# Test names state behavior in words separated by underscores.
+dotnet_diagnostic.CA1707.severity = none

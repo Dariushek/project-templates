@@ -5,5 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <!-- Blocking on tasks and async void, which the SDK analyzers miss. -->
+    <GlobalPackageReference Include="Microsoft.VisualStudio.Threading.Analyzers" Version="18.12.1" />
   </ItemGroup>
 </Project>
