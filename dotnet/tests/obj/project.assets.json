@@ -1,0 +1,26 @@
+{
+  "version": 3,
+  "targets": {},
+  "libraries": {},
+  "projectFileDependencyGroups": {},
+  "packageFolders": {
+    "": {}
+  },
+  "project": {
+    "restore": {
+      "projectUniqueName": "/home/dariuszek/Projects/project-templates/dotnet/tests/RsTests.csproj",
+      "projectPath": "/home/dariuszek/Projects/project-templates/dotnet/tests/RsTests.csproj",
+      "packagesPath": "",
+      "outputPath": "/home/dariuszek/Projects/project-templates/dotnet/tests/obj/",
+      "projectStyle": "PackageReference",
+      "UsingMicrosoftNETSdk": false
+    }
+  },
+  "logs": [
+    {
+      "code": "NU1105",
+      "level": "Error",
+      "message": "Unable to read project information for 'RsTests': Invalid framework identifier ''."
+    }
+  ]
+}

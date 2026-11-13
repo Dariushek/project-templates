@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="TUnit" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" />
+    <!--#if (postgres) -->
+    <PackageReference Include="Testcontainers.PostgreSql" />
+    <!--#endif -->
+    <!--#if (mssql) -->
+    <PackageReference Include="Testcontainers.MsSql" />
+    <!--#endif -->
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\RsApi\RsApi.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,18 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/dariuszek/Projects/project-templates/dotnet/tests/RsTests.csproj": {}
+  },
+  "projects": {
+    "/home/dariuszek/Projects/project-templates/dotnet/tests/RsTests.csproj": {
+      "restore": {
+        "projectUniqueName": "/home/dariuszek/Projects/project-templates/dotnet/tests/RsTests.csproj",
+        "projectPath": "/home/dariuszek/Projects/project-templates/dotnet/tests/RsTests.csproj",
+        "packagesPath": "",
+        "outputPath": "/home/dariuszek/Projects/project-templates/dotnet/tests/obj/",
+        "projectStyle": "PackageReference",
+        "UsingMicrosoftNETSdk": false
+      }
+    }
+  }
+}

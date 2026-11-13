@@ -1,0 +1,50 @@
+# Project templates
+
+Install once, and again after a change:
+
+```
+dotnet new install dotnet/base --force
+dotnet new install dotnet/tests --force
+```
+
+## rs-base
+
+A new solution. Run in an empty folder; the folder name becomes the solution name.
+
+```
+dotnet new rs-base
+```
+
+- `<Name>.slnx`, `src/`, `tests/`.
+- `Directory.Build.props`: newest C#, nullable, all analyzers, warnings as errors, lock files, NuGet audit. High and critical vulnerabilities fail the build.
+- `Directory.Packages.props`: central package versions, the threading analyzers and the versions the test template needs.
+- `tests/Directory.Build.props`: settings for test projects only.
+- `nuget.config`: nuget.org only, with source mapping.
+- `.editorconfig`, `.gitattributes`, `.gitignore`, `global.json`.
+- `.agents/validation.json`: format the changed files, build, test.
+- `AGENTS.md`: skeleton for project facts.
+- `.config/dotnet-tools.json`: empty manifest for local tools.
+- `.github/`: Dependabot and a workflow that runs the validation gate.
+
+The git hooks and the gate itself come from the harness: `bin/harness sync <project>`.
+
+Lock files are committed. After changing a package run `dotnet restore`; CI restores in locked mode and fails when they are stale.
+
+## rs-tests
+
+A test project for a web API: TUnit, the app in-process, the database in a container, one database per test. Run in `tests/`.
+
+```
+dotnet new rs-tests -n Shop.Api.Tests --api Shop.Api
+dotnet sln add tests/Shop.Api.Tests --include-references false
+```
+
+| Option | Default | Meaning |
+|--------|---------|---------|
+| `--api` | required | Web API project in `src/` |
+| `--database` | `postgres` | `postgres` or `mssql` |
+| `--connectionString` | `Default` | Name of the connection string the app reads |
+
+It ships no test. Derive test classes from `ApiFixture`, override `PrepareDatabaseAsync` to create the schema and `ReplaceServices` to register fakes. Needs a running container engine.
+
+`--include-references false` matters: without it `dotnet sln add` fails when the API project is already in the solution.

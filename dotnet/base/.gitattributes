@@ -1,0 +1,4 @@
+# Line feeds everywhere, so the shell hooks also run after a Windows checkout.
+* text=auto eol=lf
+*.cmd text eol=crlf
+*.bat text eol=crlf

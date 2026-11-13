@@ -8,4 +8,12 @@
     <!-- Blocking on tasks and async void, which the SDK analyzers miss. -->
     <GlobalPackageReference Include="Microsoft.VisualStudio.Threading.Analyzers" Version="18.12.1" />
   </ItemGroup>
+
+  <ItemGroup>
+    <!-- Tests, used by the rs-tests template. -->
+    <PackageVersion Include="TUnit" Version="1.84.0" />
+    <PackageVersion Include="Microsoft.AspNetCore.Mvc.Testing" Version="11.0.0" />
+    <PackageVersion Include="Testcontainers.PostgreSql" Version="4.16.0" />
+    <PackageVersion Include="Testcontainers.MsSql" Version="4.16.0" />
+  </ItemGroup>
 </Project>

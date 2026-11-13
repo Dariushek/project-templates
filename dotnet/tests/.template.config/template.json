@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "dariuszek",
+  "classifications": ["Test"],
+  "identity": "RS.Templates.Tests",
+  "name": "RS integration tests",
+  "description": "Test project that runs the web API in-process against a database in a container, one database per test. Run it from the tests folder of a solution made with rs-base.",
+  "shortName": "rs-tests",
+  "sourceName": "RsTests",
+  "preferNameDirectory": true,
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "symbols": {
+    "api": {
+      "type": "parameter",
+      "datatype": "string",
+      "isRequired": true,
+      "replaces": "RsApi",
+      "fileRename": "RsApi",
+      "description": "Name of the web API project in src, such as Shop.Api."
+    },
+    "database": {
+      "type": "parameter",
+      "datatype": "choice",
+      "defaultValue": "postgres",
+      "choices": [
+        { "choice": "postgres", "description": "PostgreSQL" },
+        { "choice": "mssql", "description": "SQL Server" }
+      ],
+      "description": "Database engine started in a container."
+    },
+    "connectionString": {
+      "type": "parameter",
+      "datatype": "string",
+      "defaultValue": "Default",
+      "replaces": "RsConnectionName",
+      "description": "Name of the connection string the app reads."
+    },
+    "postgres": { "type": "computed", "value": "(database == \"postgres\")" },
+    "mssql": { "type": "computed", "value": "(database == \"mssql\")" }
+  }
+}

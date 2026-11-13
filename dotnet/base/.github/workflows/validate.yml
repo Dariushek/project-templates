@@ -15,5 +15,6 @@ jobs:
       - uses: actions/setup-dotnet@v6
         with:
           global-json-file: global.json
+      - run: dotnet tool restore
       # The same gate the local hooks run.
       - run: python3 .githooks/validate all

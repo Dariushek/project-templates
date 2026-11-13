@@ -1,0 +1,8 @@
+{
+  "commit": [
+    "dotnet format --verify-no-changes --include {changed:*.cs}",
+    "dotnet build",
+    "dotnet test --no-build"
+  ],
+  "push": []
+}

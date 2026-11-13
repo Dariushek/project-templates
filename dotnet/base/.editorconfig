@@ -213,6 +213,6 @@ resharper_suggest_var_or_type_built_in_types_highlighting = warning
 resharper_suggest_var_or_type_elsewhere_highlighting = warning
 resharper_suggest_var_or_type_simple_types_highlighting = warning
 
-[**Tests/**.cs]
+[tests/**.cs]
 # Test names state behavior in words separated by underscores.
 dotnet_diagnostic.CA1707.severity = none

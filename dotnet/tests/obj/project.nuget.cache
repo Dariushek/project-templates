@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "jZNmOy2v93k=",
+  "success": false,
+  "projectFilePath": "/home/dariuszek/Projects/project-templates/dotnet/tests/RsTests.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1105",
+      "level": "Error",
+      "message": "Unable to read project information for 'RsTests': Invalid framework identifier ''.",
+      "projectPath": "/home/dariuszek/Projects/project-templates/dotnet/tests/RsTests.csproj",
+      "filePath": "/home/dariuszek/Projects/project-templates/dotnet/tests/RsTests.csproj",
+      "targetGraphs": []
+    }
+  ]
+}
