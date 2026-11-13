@@ -4,8 +4,9 @@
   "classifications": ["Config"],
   "identity": "RS.Templates.Base",
   "name": "RS base config",
-  "description": "Shared .editorconfig, .gitignore, Directory.Build.props, Directory.Packages.props, global.json and a CI workflow that runs the validation gate.",
+  "description": "Solution file with src and tests folders, shared .editorconfig, .gitignore, Directory.Build.props, Directory.Packages.props, global.json and a CI workflow that runs the validation gate.",
   "shortName": "rs-base",
+  "sourceName": "RsBase",
   "tags": {
     "language": "C#",
     "type": "item"
