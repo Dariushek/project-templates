@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "dariuszek",
+  "classifications": ["Web", "Web API"],
+  "identity": "RS.Templates.WebApi",
+  "name": "RS web API",
+  "description": "Empty web API with problem details, a health endpoint and OpenAPI. Run it from the src folder of a solution made with rs-base.",
+  "shortName": "rs-webapi",
+  "sourceName": "RsApi",
+  "preferNameDirectory": true,
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  }
+}

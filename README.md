@@ -4,6 +4,7 @@ Install once, and again after a change:
 
 ```
 dotnet new install dotnet/base --force
+dotnet new install dotnet/webapi --force
 dotnet new install dotnet/tests --force
 ```
 
@@ -17,7 +18,7 @@ dotnet new rs-base
 
 - `<Name>.slnx`, `src/`, `tests/`.
 - `Directory.Build.props`: newest C#, nullable, all analyzers, warnings as errors, lock files, NuGet audit. High and critical vulnerabilities fail the build.
-- `Directory.Packages.props`: central package versions, the threading analyzers and the versions the test template needs.
+- `Directory.Packages.props`: central package versions, the threading analyzers and the versions the other templates need.
 - `tests/Directory.Build.props`: settings for test projects only.
 - `nuget.config`: nuget.org only, with source mapping.
 - `.editorconfig`, `.gitattributes`, `.gitignore`, `global.json`.
@@ -29,6 +30,24 @@ dotnet new rs-base
 The git hooks and the gate itself come from the harness: `bin/harness sync <project>`.
 
 Lock files are committed. After changing a package run `dotnet restore`; CI restores in locked mode and fails when they are stale.
+
+## rs-webapi
+
+An empty web API. Run in `src/`.
+
+```
+dotnet new rs-webapi -n Shop.Api
+dotnet sln add src/Shop.Api
+```
+
+- Errors as problem details, `/health`, OpenAPI at `/openapi/v1.json` in development.
+- No endpoints, no database, no auth, no folders.
+
+Container image, no Dockerfile needed:
+
+```
+dotnet publish src/Shop.Api -t:PublishContainer
+```
 
 ## rs-tests
 
