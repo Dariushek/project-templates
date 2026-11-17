@@ -23,11 +23,13 @@ dotnet new rs-base
 - `nuget.config`: nuget.org only, with source mapping.
 - `.editorconfig`, `.gitattributes`, `.gitignore`, `global.json`.
 - `.agents/validation.json`: format the changed files, build, test.
+- `.agents/after-edit.json`: whitespace format of every C# file an agent edits.
 - `AGENTS.md`: skeleton for project facts.
+- `CLAUDE.md`: imports `AGENTS.md`, so Claude Code reads it too.
 - `.config/dotnet-tools.json`: empty manifest for local tools.
 - `.github/`: Dependabot and a workflow that runs the validation gate.
 
-The git hooks and the gate itself come from the harness: `bin/harness sync <project>`.
+The git hooks, the gate and the after-edit hook come from the harness: `bin/harness sync <project>` with at least the `validation` and `after-edit` bundles.
 
 Lock files are committed. After changing a package run `dotnet restore`; CI restores in locked mode and fails when they are stale.
 
