@@ -1,3 +1,9 @@
-[
-  "dotnet format whitespace --folder --include {changed:*.cs}"
-]
+{
+  "edit": [
+    "dotnet format whitespace --folder --include {changed:*.cs}"
+  ],
+  "finish": [
+    "dotnet format style --severity info --include {changed:*.cs}",
+    "dotnet jb cleanupcode RsBase.slnx --profile=\"Built-in: Full Cleanup\" --no-build --include={changed:*.cs:;}"
+  ]
+}

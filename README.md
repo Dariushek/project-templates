@@ -22,11 +22,12 @@ dotnet new rs-base
 - `tests/Directory.Build.props`: settings for test projects only.
 - `nuget.config`: nuget.org only, with source mapping.
 - `.editorconfig`, `.gitattributes`, `.gitignore`, `global.json`.
-- `.agents/validation.json`: format the changed files, build, test.
-- `.agents/after-edit.json`: whitespace format of every C# file an agent edits.
+- `.agents/validation.json`: check whitespace and code style of the changed files, build, test.
+- `.agents/after-edit.json`: whitespace format of every C# file an agent edits. When it finishes, `dotnet format style`, then ReSharper Full Cleanup on the changed files.
+- `.editorconfig`: ReSharper braces settings match Roslyn's `csharp_prefer_braces`, so the two formatters agree.
 - `AGENTS.md`: skeleton for project facts.
 - `CLAUDE.md`: imports `AGENTS.md`, so Claude Code reads it too.
-- `.config/dotnet-tools.json`: empty manifest for local tools.
+- `.config/dotnet-tools.json`: local tools, ReSharper command line tools (`jb`) for the cleanup. Run `dotnet tool restore` after cloning.
 - `.github/`: Dependabot and a workflow that runs the validation gate.
 
 The git hooks, the gate and the after-edit hook come from the harness: `bin/harness sync <project>` with at least the `validation` and `after-edit` bundles.

@@ -1,6 +1,7 @@
 {
   "commit": [
-    "dotnet format --verify-no-changes --include {changed:*.cs}",
+    "dotnet format whitespace --verify-no-changes --include {changed:*.cs}",
+    "dotnet format style --verify-no-changes --severity info --include {changed:*.cs}",
     "dotnet build",
     "dotnet test --no-build"
   ],
